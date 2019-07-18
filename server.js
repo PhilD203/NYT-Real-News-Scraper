@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //DB Connection
-mongoose.connect("mongodb://localhost/NYTScraper", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/mongoHeadlines", { useNewUrlParser: true });
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/NYTScraper";
@@ -29,30 +29,46 @@ mongoose.connect("mongodb://localhost/NYTScraper", { useNewUrlParser: true });
 
 app.get("/scrape", function (req, res) {
 
-    axios.get("https://www.nytimes.com/?login=google").then(function (response) {
-        var $ = cheerio.load(response.data);
+  var nytArticle = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=gAzKnNdjxqXkTdJvRhDX0xw6WK0CvKJM";
 
-        $("article h2").each(function (i, element) {
-            var result = {};
+  axios.get(nytArticle).then(function (response) {
+   
+    for (var i = 0; i < response.data.results.length; i ++){
+      var title = (response.data.results[i].title);
+      var abstract = (response.data.results[i].abstract);
+      var url = (response.data.results[i].url);
 
-            result.title = $(this)
-                .children("a")
-                .text("");
-            result.link = $(this)
-                .children("a")
-                .attr("href");
+      var rawArticle = {}
 
-            db.Article.create(result)
-                .then(function (dbArticle) {
-                    console.log(dbArticle);
-                })
-                .catch(function (err) {
-                    console.log(err);
-                });
-        });
-        res.send("Scrape Complete");
-    });
-});
+      rawArticle["headline"] = title;
+      rawArticle["summary"] = abstract;
+      rawArticle["URL"] = url;
+
+      db.Article.create(rawArticle)
+      .then(function(dbArticle) {
+        console.log(dbArticle);
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
+  
+    }
+    
+    //for loop 
+       //Get Title from article
+      //Get Summary from article
+      //Get Url from article
+      // Insert into mongo db
+    res.json({});
+  });
+
+  //articles GET route 
+
+
+
+})
+
+
 
 
 
@@ -61,5 +77,5 @@ app.get("/scrape", function (req, res) {
 
 //Server
 app.listen(PORT, function () {
-    console.log("App running on port " + PORT + "!");
+  console.log("App running on port " + PORT + "!");
 });
