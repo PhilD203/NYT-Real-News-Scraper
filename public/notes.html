@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/materia/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/style.css">
-    <title>NYT Real News Scraper</title>
+    <title>Notes</title>
 </head>
 
 <body>
@@ -20,10 +20,8 @@
         </button>
         <div class="collapse navbar-collapse" id="articleNav">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="notes.html" id= "save">Saved Notes</a>
-                <input class="btn btn-primary" id="scrapeButton" type="submit" value="GET New Articles">
-                <br>
-                <input class="btn btn-primary" id="reset" type="submit" value="Reset">
+                <a class="nav-item nav-link" href="index.html">Home</a>
+                <input class="btn btn-primary" id="viewNotes" type="submit" value="View Saved Notes">
             </div>
         </div>
     </nav>
@@ -35,10 +33,9 @@
     </div>
 
     <div id="wrapper">
-        <h1> Top Stories</h1>
+        <h1> Saved Notes</h1>
 
-        <div class="media-body" id="articleDiv"></div>
-        <div id="notesDiv"></div>
+        <div class="media-body" id="savedNotesDiv"></div>
 
     </div>
     

@@ -82,6 +82,16 @@ app.get("/scrape", function (req, res) {
       res.json(err);
     })
   })
+  app.get("/notes", function(req,res){
+    db.Note.find({}).then(function(dbNote){
+      res.json(dbNote);
+    })
+    .catch(function(err){
+      res.json(err);
+    })
+  })
+
+
   app.post("/articles/:id", function(req, res) {
     db.Note.create(req.body)
       .then(function(dbNote) {

@@ -13,6 +13,10 @@ body { background-color: ghostwhite }
     padding: 2%;
     margin: 3%;
 }
+#viewNotes{
+    padding: 2%;
+    margin: 3%;
+}
 #jumbo {
     background-image: url("https://venturepr.co/wp-content/uploads/2018/11/ny-times-logo.jpg");
     font-family: 'Vollkorn', serif;
@@ -32,6 +36,13 @@ body { background-color: ghostwhite }
   height: 700px;
   font-size: 15px;
 }
+#savedNotes {
+    display: inline-block;
+    overflow: auto;
+    width: 60%;
+    height: 700px;
+    font-size: 15px;
+  }
 #notesDiv {
   float: right;
   width: 30%;

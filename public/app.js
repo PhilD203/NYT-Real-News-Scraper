@@ -28,7 +28,7 @@ $(document).ready(function () {
             articlePost();
         }
     });
-    
+
     $(document).on("click", "p", function () {
         $("#notesDiv").empty();
 
@@ -73,9 +73,23 @@ $(document).ready(function () {
         $("#bodyinput").val("");
     });
 
-    document.getElementById("reset").onclick = function () {
-        console.log("clicked");
-        document.getElementById("articleDiv").innerHTML = "";
-    };
+    //View Notes Page
+
+    $(document).on("click", "#viewNotes", function () {
+        $.ajax({
+            method: "GET",
+            url: "/notes",
+        });
+        function notePost() {
+            $.getJSON("/notes", function (data) {
+                $("#savedNotesDiv").empty();
+                for (var i = 0; i < data.length; i++) {
+                    $("#savedNotesDiv").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br>" + data[i].body + "<br>" + "</p>");
+                };
+            });
+        }
+        notePost();
+           
+    });
 
 });
