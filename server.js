@@ -9,6 +9,9 @@ var db = require("./models");
 
 var PORT = 3000;
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 var app = express();
 
 //Middleware
@@ -18,12 +21,12 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //DB Connection
-mongoose.connect("mongodb://localhost/mongoHeadlines", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost/mongoHeadlines", { useNewUrlParser: true });
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/NYTScraper";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-// mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI);
 
 //Routes
 
