@@ -53,7 +53,6 @@ app.get("/scrape", function (req, res) {
       });
   
     }
-    
     //for loop 
        //Get Title from article
       //Get Summary from article
@@ -61,12 +60,19 @@ app.get("/scrape", function (req, res) {
       // Insert into mongo db
     res.json({});
   });
+  });
 
-  //articles GET route 
+  app.get("/articles",function(req,res){
+    db.Article.find({}).then(function(dbArticle){
+      res.json(dbArticle);
+    })
+    .catch(function(err){
+      res.json(err);
+    })
+    });
 
 
 
-})
 
 
 

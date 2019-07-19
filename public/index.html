@@ -20,7 +20,8 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="#">Features</a>
-                <input class="btn btn-primary" type="submit" value="Scrape New Atricles">
+                <input class="btn btn-primary" id="scrapeButton" type="submit" value="GET New Articles">
+                <br>
                 <input class="btn btn-primary" type="reset" value="Reset">
             </div>
         </div>
@@ -34,17 +35,17 @@
     <ul class="list-unstyled">
         <li class="media">
             <img src="..." class="mr-3" alt="...">
-            <div class="media-body">
-                <h5 class="mt-0 mb-1">List-based media object</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-                fringilla. Donec lacinia congue felis in faucibus.
+            <div class="media-body" id="articleDiv">
+                <h5 class="mt-0 mb-1"></h5>
+                
             </div>
 
     </ul>
     <div class = "footer">
         
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./app.js"></script>
 
 </body>
 
