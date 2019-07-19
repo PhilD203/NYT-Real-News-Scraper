@@ -30,6 +30,7 @@ body { background-color: ghostwhite }
   overflow: auto;
   width: 60%;
   height: 700px;
+  font-size: 15px;
 }
 #notesDiv {
   float: right;
@@ -39,6 +40,8 @@ textarea, input {
     display: block;
     width: 100%;
     background-color: rgb(233, 235, 241);
+    border-radius: 2px;
+    margin: 3%;
   }
   input {
     height: 36px;
@@ -48,3 +51,7 @@ textarea, input {
     height: 200px;
     font-size: 18px;
   }
+.h3{
+    font-family: 'Vollkorn', serif;
+    text-align: center;
+}
