@@ -1,0 +1,50 @@
+body { background-color: ghostwhite }
+#wrapper {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+}
+#scrapeButton{
+    padding: 2%;
+    margin: 3%;
+}
+#reset{
+    padding: 2%;
+    margin: 3%;
+}
+#jumbo {
+    background-image: url("https://venturepr.co/wp-content/uploads/2018/11/ny-times-logo.jpg");
+    font-family: 'Vollkorn', serif;
+}
+#realNews{
+    text-align: left;
+    margin-left: 8%;
+}
+#realNewsSubtitle{
+    text-align: left;
+    margin-left: 8%;
+}
+#articleDiv {
+  display: inline-block;
+  overflow: auto;
+  width: 60%;
+  height: 700px;
+}
+#notesDiv {
+  float: right;
+  width: 30%;
+}
+textarea, input {
+    display: block;
+    width: 100%;
+    background-color: rgb(233, 235, 241);
+  }
+  input {
+    height: 36px;
+    font-size: 24px;
+  }
+  textarea {
+    height: 200px;
+    font-size: 18px;
+  }

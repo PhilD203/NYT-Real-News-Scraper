@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/materia/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css">
     <title>NYT Real News Scraper</title>
 </head>
 
@@ -16,34 +18,33 @@
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse" id="articleNav">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="#">Features</a>
                 <input class="btn btn-primary" id="scrapeButton" type="submit" value="GET New Articles">
                 <br>
-                <input class="btn btn-primary" type="reset" value="Reset">
+                <input class="btn btn-primary" id="reset" type="submit" value="Reset">
             </div>
         </div>
     </nav>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid"id="jumbo">
         <div class="container">
-            <h1 class="display-4">NYT SCRAPER</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <h1 class="display-4" id="realNews">Real News SCRAPER</h1>
+            <p class="lead" id ="realNewsSubtitle">Click Get New Articles to see the latest top headlines!</p>
         </div>
     </div>
-    <ul class="list-unstyled">
-        <li class="media">
-            <img src="..." class="mr-3" alt="...">
-            <div class="media-body" id="articleDiv">
-                <h5 class="mt-0 mb-1"></h5>
-                
-            </div>
 
-    </ul>
-    <div class = "footer">
-        
+    <div id="wrapper">
+        <h1> Top Stories</h1>
+
+        <div class="media-body" id="articleDiv"></div>
+        <div id="notesDiv"></div>
+
     </div>
+    
+
+    <div class="footer"> </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./app.js"></script>
 
